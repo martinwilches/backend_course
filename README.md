@@ -96,3 +96,15 @@ Codigo entregado por el servidor al cliente una vez se ha proceso la solicitud.
 - __400 BAD REQUEST:__ La solicitud no es valida
 - __404 NOT FOUND:__ El recurso no existe
 - __500 SERVER ERROR:__ Error ocurrido en el servidor
+
+## Tipos de APIs
+
+### RESTful APIs
+
+Siguen un enfoque en el cual los clientes interactuan con recursos URLs (por ejemplo `https://api.example.com/users/1`) utilizando metodos HTTP estandar (`GET`, `POST`, `PUT`, `DELETE`).
+
+### GraphQL APIs
+
+Permite a los cliente solicitar exactamente los datos que necesitan
+
+> Cliente -> `GET user-1 age` -> Servidor
