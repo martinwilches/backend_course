@@ -108,3 +108,34 @@ Siguen un enfoque en el cual los clientes interactuan con recursos URLs (por eje
 Permite a los cliente solicitar exactamente los datos que necesitan
 
 > Cliente -> `GET user-1 age` -> Servidor
+
+## Bases de datos
+
+Sistema que almacena, organiza y gestiona datos.
+
+### Bases de datos relacionales (SQL)
+
+Almacenan datos en tablas estructuradas mediante filas y columnas.
+
+|id | name | age |
+|---|------|-----|
+|1  |gary  |30   |
+|1  |mark  |20   |
+
+> Utilizan SQL como lenguaje de consulta para manipular los datos almacenados
+
+### Bases de datos no relacionales (NoSQL)
+
+No utilizan un sistema de almacenamiento en tablas, sino que pueden usar estructuras mas flexibles como documentos __(MongoDB)__ o pares clave-valor __(Redis)__.
+
+#### ORM (Object Relational Model)
+
+Mapeo Objeto-Relacional, simplifican la interaccion con la base de datos, permitiendo escribir consultas utilizando la sintaxis de un lenguaje de programacion.
+
+Ejemplo de consulta utilizando el ORM `Prisma`
+
+```js
+const user = await prisma.user.findUnique({
+  where: {id: 1}
+})
+```
