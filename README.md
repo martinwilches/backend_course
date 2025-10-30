@@ -139,3 +139,17 @@ const user = await prisma.user.findUnique({
   where: {id: 1}
 })
 ```
+
+## Arquitecturas Backend
+
+### Arquitectura monolitica
+
+Todos los componentes de la aplicacion (interfaz, logica de negocio, capa de interaccion con la base de datos) se combinan en un codigo base unico.
+
+### Arquitectura de microservicios
+
+La aplicacion se divide en partes mas pequeñas e independientes. Cada servicio maneja una funcion especifica (por ejemplo, la autenticacion de pagos o notificaciones).
+
+### Arquitectura sin servidor (Serverless)
+
+un proveedor externo (como AWS Lambda o Vercel), administra la infraestructura del servidor. El proveedor se encarga de de la gestion, escalabilidad y mantenimiento de los servidores y los usuarios solo pagan por los recursos que consumen.
