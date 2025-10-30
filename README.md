@@ -152,4 +152,4 @@ La aplicacion se divide en partes mas pequeñas e independientes. Cada servicio 
 
 ### Arquitectura sin servidor (Serverless)
 
-un proveedor externo (como AWS Lambda o Vercel), administra la infraestructura del servidor. El proveedor se encarga de de la gestion, escalabilidad y mantenimiento de los servidores y los usuarios solo pagan por los recursos que consumen.
+Un proveedor externo (como AWS Lambda o Vercel), administra la infraestructura del servidor. El proveedor se encarga de de la gestion, escalabilidad y mantenimiento de los servidores y los usuarios solo pagan por los recursos que consumen.
