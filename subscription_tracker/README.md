@@ -8,20 +8,32 @@ npx express-generator --no-view --git ./
 
 ### Paquetes
 
-- nodemon
+#### nodemon
 
 ```bash
 npm install --save-dev nodemon
 ```
 
-- eslint
+#### eslint
 
 ```bash
 npx eslint --init
 ```
 
-- dotenv
+#### dotenv
 
 ```bash
 npm install dotenv
+```
+
+#### mongodb
+
+```bash
+npm install mongodb
+```
+
+#### mongoose
+
+```bash
+npm install mongoose
 ```
