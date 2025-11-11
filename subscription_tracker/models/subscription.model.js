@@ -79,4 +79,26 @@ const subscriptionSchema = new mongoose.Schema(
 
 const Subscription = mongoose.model('Subscription', subscriptionSchema)
 
+// autocalcular la fecha de renovacion de la subscripcion // se ejecuta antes de que se cree una nueva subscripcion
+subscriptionSchema.pre('save', function(next) {
+    if (!this.renewalDate) {
+        const renewalDate = {
+            daily: 1,
+            weekly: 7,
+            monthly: 30,
+            yearly: 365
+        }
+
+        this.renewalDate = new Date()
+        this.renewalDate.setDate(this.renewalDate.getDate() + renewalDate[this.frequency]) // getDate() obtiene el valor del dia
+    }
+
+    // si la fecha de renovacion es menor a la fecha actual, se actualiza el estado de la subscripcion como expirada
+    if (this.renewalDate < new Date()) {
+        this.status = 'expired'
+    }
+
+    next()
+})
+
 export default Subscription
