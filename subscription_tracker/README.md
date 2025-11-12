@@ -28,6 +28,5 @@ npm install mongoose
 npm install jsonwebtoken
 
 # bcryptjs
-
 npm install bcryptjs
 ```
