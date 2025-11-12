@@ -1,6 +1,6 @@
 # Subscription Tracker
 
-## Generar la aplicacion de Express
+Generar la estructura inicial de la aplicacion de Express.js
 
 ```bash
 npx express-generator --no-view --git ./
@@ -8,32 +8,26 @@ npx express-generator --no-view --git ./
 
 ### Paquetes
 
-#### nodemon
-
 ```bash
+# nodemon
 npm install --save-dev nodemon
-```
 
-#### eslint
-
-```bash
+# eslint
 npx eslint --init
-```
 
-#### dotenv
-
-```bash
+# dotenv
 npm install dotenv
-```
 
-#### mongodb
-
-```bash
+# mongodb
 npm install mongodb
-```
 
-#### mongoose
-
-```bash
+#mongoose
 npm install mongoose
+
+# jwt
+npm install jsonwebtoken
+
+# bcryptjs
+
+npm install bcryptjs
 ```
