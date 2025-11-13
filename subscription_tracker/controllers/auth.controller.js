@@ -83,7 +83,7 @@ export const signIn = async (req, res, next) => {
             expiresIn: JWT_EXPIRES_IN,
         })
 
-        return res.json({
+        res.json({
             success: true,
             message: 'User sign in successfully',
             date: {
