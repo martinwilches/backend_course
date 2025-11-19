@@ -29,4 +29,7 @@ npm install jsonwebtoken
 
 # bcryptjs
 npm install bcryptjs
+
+# arcjet
+npm install @arcjet/node @arcjet/inspect
 ```

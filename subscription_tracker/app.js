@@ -10,6 +10,7 @@ import authRouter from './routes/auth.routes.js'
 import subscriptionRouter from './routes/subscription.routes.js'
 
 import errorMiddleware from './middlewares/error.middleware.js'
+import arcjetMiddleware from './middlewares/arcjet.middleware.js'
 
 const app = express() // aplicacion de express
 
@@ -17,6 +18,7 @@ const app = express() // aplicacion de express
 app.use(express.json()) // leer datos JSON enviados por el cliente
 app.use(cookieParser()) // acceder a la informacion de las cookies
 app.use(express.urlencoded({ extended: false })) // analizar datos de formularios codificados, haciendolos accesibles a traves de req.body
+app.use(arcjetMiddleware) // controlar las peticiones que recibe la aplicacion
 
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/users', userRouter)

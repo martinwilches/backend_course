@@ -5,5 +5,12 @@ import { config } from 'dotenv'
 config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` })
 
 // se desestructuran las propiedades del objeto global process.env y se exportan para que sean accesibles desde otros modulos
-export const { PORT, NODE_ENV, DB_URI, JWT_SECRET, JWT_EXPIRES_IN } =
-    process.env
+export const {
+    PORT,
+    NODE_ENV,
+    DB_URI,
+    JWT_SECRET,
+    JWT_EXPIRES_IN,
+    ARCJET_KEY,
+    ARCKET_ENV,
+} = process.env
