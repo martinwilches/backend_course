@@ -28,7 +28,7 @@ const subscriptionSchema = new mongoose.Schema(
             enum: [
                 'sports',
                 'news',
-                'enterteinment',
+                'entertainment',
                 'lifestlye',
                 'technology',
                 'finance',
@@ -61,7 +61,7 @@ const subscriptionSchema = new mongoose.Schema(
             required: true,
             validate: {
                 // validar que la fecha de renovacion de la subscripcion sea mayor a la fecha de inicio de dicha suscripcion
-                validator: function () {
+                validator: function (value) {
                     return value > this.startDate
                 },
                 message: 'Renewal date must be after the start date',
@@ -77,10 +77,8 @@ const subscriptionSchema = new mongoose.Schema(
     { timestamps: true }
 )
 
-const Subscription = mongoose.model('Subscription', subscriptionSchema)
-
 // autocalcular la fecha de renovacion de la subscripcion // se ejecuta antes de que se cree una nueva subscripcion
-subscriptionSchema.pre('save', function(next) {
+subscriptionSchema.pre('validate', function(next) {
     if (!this.renewalDate) {
         const renewalDate = {
             daily: 1,
@@ -100,5 +98,7 @@ subscriptionSchema.pre('save', function(next) {
 
     next()
 })
+
+const Subscription = mongoose.model('Subscription', subscriptionSchema)
 
 export default Subscription
