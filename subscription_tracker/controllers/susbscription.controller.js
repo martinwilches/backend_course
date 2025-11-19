@@ -17,3 +17,24 @@ export const createSubscription = async (req, res, next) => {
         next(error)
     }
 }
+
+// obtener las subscripciones del usuario autenticado
+export const getUserSubscriptions = async (req, res, next) => {
+    try {
+        if (req.params.id !== req.user._id.toString()) {
+            const error = new Error('You are not authorized')
+            error.status = 403
+            throw error
+        }
+
+        const subscriptions = await Subscription.find({user: req.user._id})
+
+        res.json({
+            success: true,
+            message: 'Subscriptions fetched successfully',
+            data: subscriptions
+        })
+    } catch (error) {
+        next(error)
+    }
+}
