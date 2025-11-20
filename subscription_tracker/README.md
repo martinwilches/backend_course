@@ -32,4 +32,7 @@ npm install bcryptjs
 
 # arcjet
 npm install @arcjet/node @arcjet/inspect
+
+# upstash - workflows
+npm install @upstash/workflow
 ```
